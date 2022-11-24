@@ -29,22 +29,7 @@ namespace Web.Services.Concrete
         }
 
 
-        public async Task<CategoryUpdateVM> GetUpdateModelAsync(int id)
-        {
-            
-            var category = await _categoryRepository.GetAsync(id);
-
-            if (category == null) return null;
-            
-                var model = new CategoryUpdateVM
-                {
-                    Id = category.Id,
-                    Title = category.Title,
-                };
-
-                return model;
-
-        }
+   
 
 
         public async Task<bool> CreateAsync(CategoryCreateVM model)
@@ -64,6 +49,22 @@ namespace Web.Services.Concrete
 
             await _categoryRepository.CreateAsync(category);
             return true;
+        }
+        public async Task<CategoryUpdateVM> GetUpdateModelAsync(int id)
+        {
+
+            var category = await _categoryRepository.GetAsync(id);
+
+            if (category == null) return null;
+
+            var model = new CategoryUpdateVM
+            {
+                Id = category.Id,
+                Title = category.Title,
+            };
+
+            return model;
+
         }
 
         public async Task<bool> UpdateAsync(CategoryUpdateVM model)
