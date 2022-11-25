@@ -28,9 +28,19 @@
                     </ul>
                 </div>
             </div>
+             @if (User.Identity.IsAuthenticated)
+            {
+                <span>@User.Identity.Name</span>
+                <button type="button" class="btn btn-warning"><a asp-action="logout" asp-controller="account">Logout</a></button>
+            }
+         
         </nav>
+
+
     </header>
+
     <div class="container">
+          
         <main role="main" class="pb-3">
             @RenderBody()
         </main>

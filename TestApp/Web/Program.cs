@@ -1,5 +1,6 @@
 using Core.Entities;
 using Core.Utilities.FileService;
+using DataAccess;
 using DataAccess.Contexts;
 using DataAccess.Repositories.Abstract;
 using DataAccess.Repositories.Concrete;
@@ -8,6 +9,8 @@ using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Web.Services.Abstract;
 using Web.Services.Concrete;
+using AdminAbstractService = Web.Areas.Admin.Services.Abstract;
+using AdminConcreteService = Web.Areas.Admin.Services.Concrete;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,17 +36,16 @@ builder.Services.AddIdentity<User, IdentityRole>(options =>
 #region Repositories
 
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
-
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
-
 builder.Services.AddScoped<IProductPhotoRepository, ProductPhotoRepository>();
 #endregion
 
 #region Services
 
 builder.Services.AddScoped<ICategoryService, CategoryService>();
-
+builder.Services.AddScoped<AdminAbstractService.ICategoryService, AdminConcreteService.CategoryService>();
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IAccountService, AccountService>();
 
 
 
@@ -69,10 +71,27 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
+
+app.MapControllerRoute(
+    name: "areas",
+    pattern: "{area:exists}/{controller=category}/{action=index}/{id?}"
+    );
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+
+var scopeFactory = app.Services.GetRequiredService<IServiceScopeFactory>();
+
+using (var scope = scopeFactory.CreateScope())
+{
+    var userManager = scope.ServiceProvider.GetService<UserManager<User>>();
+    var roleManager = scope.ServiceProvider.GetService<RoleManager<IdentityRole>>();
+    await DbInitializer.SeedAsync(userManager, roleManager);
+}
+
 
 app.Run();

@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Web.Services.Abstract;
 using Web.ViewModels.Product;
+using Web.ViewModels.Product.ProductPhoto;
 
 namespace Web.Services.Concrete
 {
@@ -195,7 +196,7 @@ namespace Web.Services.Concrete
                 }
             }
 
-            var product = await _productRepository.GetAsync(model.Id);
+            var product = await _productRepository.GetWithPhotosAsync(model.Id);
 
             bool hasError = false;
 
@@ -217,7 +218,7 @@ namespace Web.Services.Concrete
 
                 if (hasError) { return false; }
 
-                int order = 1; /*product.ProductPhoto.OrderByDescending(pp => pp.Order).FirstOrDefault().Order;*/
+                int order = product.ProductPhotos.OrderByDescending(pp => pp.Order).FirstOrDefault().Order;
                 foreach (var photo in model.Photos)
                 {
                     var productPhoto = new ProductPhoto
@@ -263,6 +264,14 @@ namespace Web.Services.Concrete
             if (product != null)
             {
                 _fileService.Delete(product.MainPhotoPath, _webHostEnvironment.WebRootPath);
+
+
+                foreach (var photo in await _productPhotoRepository.GetAllAsync())
+                {
+                    _fileService.Delete(photo.Name, _webHostEnvironment.WebRootPath);
+
+                }
+
                 await _productRepository.DeleteAsync(product);
 
                 return true;
@@ -271,6 +280,64 @@ namespace Web.Services.Concrete
 
             return false;
         }
+
+        public async Task<bool> DeletePhotoAsync(int id)
+        {
+            var productPhoto = await _productPhotoRepository.GetAsync(id);
+            if (productPhoto != null)
+            {
+                _fileService.Delete(productPhoto.Name, _webHostEnvironment.WebRootPath);
+
+
+                
+
+                await _productPhotoRepository.DeleteAsync(productPhoto);
+
+                return true;
+
+            }
+
+            return false;
+        }
+
+
+        public async Task<ProductPhotoUpdateVM> GetPhotoUpdateModelAsync(int id)
+        {
+
+
+            
+            var productPhoto = await _productPhotoRepository.GetAsync(id);
+
+            if (productPhoto == null) return null;
+
+            var model = new ProductPhotoUpdateVM
+            {
+                Id = id,
+               Order=productPhoto.Order,
+               ProductId = productPhoto.ProductId,
+            };
+
+            return model;
+
+        }
+
+
+        public async Task<bool> UpdatePhotoAsync(ProductPhotoUpdateVM model)
+        {
+            if (!_modelState.IsValid) return false;
+
+            var productPhoto = await _productPhotoRepository.GetAsync(model.Id);
+
+            if (productPhoto != null)
+            {
+                productPhoto.Order = model.Order;
+                
+                await _productPhotoRepository.UpdateAsync(productPhoto);
+
+            }
+            return true;
+        }
+
 
 
     }

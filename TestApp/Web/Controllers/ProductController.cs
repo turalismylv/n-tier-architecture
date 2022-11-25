@@ -1,9 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Web.Services.Abstract;
 using Web.ViewModels.Product;
+using Web.ViewModels.Product.ProductPhoto;
 
 namespace Web.Controllers
 {
+    [Authorize]
     public class ProductController : Controller
     {
         private readonly IProductService _productService;
@@ -32,7 +35,7 @@ namespace Web.Controllers
 
         public async Task<IActionResult> Create(ProductCreateVM model)
         {
-          
+
 
             var isSucceeded = await _productService.CreateAsync(model);
             if (isSucceeded) return RedirectToAction(nameof(Index));
@@ -63,7 +66,7 @@ namespace Web.Controllers
         [HttpPost]
         public async Task<IActionResult> Delete(int id)
         {
-          var isSucceded=  await _productService.DeleteAsync(id);
+            var isSucceded = await _productService.DeleteAsync(id);
             if (isSucceded)
             {
                 return RedirectToAction(nameof(Index));
@@ -72,5 +75,37 @@ namespace Web.Controllers
 
 
         }
+
+        [HttpPost]
+        public async Task<IActionResult> DeletePhoto(int id, int productId)
+        {
+
+            var isSucceded = await _productService.DeletePhotoAsync(id);
+            if (isSucceded) return RedirectToAction("update", "product", new { id = productId });
+
+            return NotFound();
+
+
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> UpdatePhoto(int id)
+        {
+            var model = await _productService.GetPhotoUpdateModelAsync(id);
+            if (model == null) return NotFound();
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UpdatePhoto(int id, ProductPhotoUpdateVM model)
+        {
+            if (id != model.Id) return NotFound();
+
+            var isSucceeded = await _productService.UpdatePhotoAsync(model);
+            if (isSucceeded) return RedirectToAction("update", "product", new { id = model.ProductId });
+            
+            return View(model);
+        }
+
     }
 }

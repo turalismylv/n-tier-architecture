@@ -9,5 +9,7 @@ namespace Core.Entities
 {
     public class User :IdentityUser
     {
+        public string FullName { get; set; }
+        public int  Age { get; set; }
     }
 }
