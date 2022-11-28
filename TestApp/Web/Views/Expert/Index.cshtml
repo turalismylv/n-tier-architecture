@@ -1,0 +1,41 @@
+﻿
+@using Web.ViewModels.Expert
+@model ExpertIndexVM
+
+<a class="btn btn-primary" asp-action="create" asp-controller="expert">Create</a>
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Position</th>
+            <th scope="col">CreateAt</th>
+            <th scope="col">ModifiedAt</th>
+              <th scope="col">Photo</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var expert in Model.Experts)
+        {
+            <tr>
+                <td>@expert.Id</td>
+                <td>@expert.Name</td>
+                 <td>@expert.Surname</td>
+                  <td>@expert.Position</td>
+                   <td>@expert.CreatedAt.ToShortDateString()</td>
+                   <td>@expert.ModifiedAt.ToShortDateString()</td>
+                <td><img class="img-thumbnail" style="width:50px ; height:50px; object-fit:cover" src="~/assets/img/@expert.PhotoName" /></td>
+               
+                <td>
+                    <a class="btn btn-primary" asp-action="update" asp-controller="expert" asp-route-id="@expert.Id">Update</a>
+                    <form method="post" asp-action="delete" asp-controller="expert" asp-route-id="@expert.Id">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>

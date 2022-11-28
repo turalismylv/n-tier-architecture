@@ -1,0 +1,28 @@
+﻿@using Core.Constants
+@using Web.ViewModels.Expert
+@model ExpertUpdateVM
+
+<form enctype="multipart/form-data" asp-action="update" asp-controller="expert" method="post">
+
+    <label asp-for="Name"></label>
+    <input asp-for="Name" />
+    <span asp-validation-for="Name"></span>
+    <div class="form-group">
+        <label asp-for="Surname">Surname</label>
+        <input class="form-control" asp-for="Surname">
+        <span asp-validation-for="Surname"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Position">Position</label>
+        <input class="form-control" asp-for="Position"></input>
+        <span asp-validation-for="Position"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="MainPhoto">MainPhoto</label>
+        <input class="form-control" asp-for="MainPhoto">
+        <span asp-validation-for="MainPhoto"></span>
+    </div>
+
+
+    <button type="submit">Update</button>
+</form>

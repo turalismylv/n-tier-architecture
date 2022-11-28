@@ -15,8 +15,20 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\tursl\OneDrive\Desktop\CODEACADEMY\HomeWorks\HomeWork2311\TestApp\Web
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/tursl/OneDrive/Desktop/CODEACADEMY/HomeWorks/HomeWork2311/TestApp/Web/Areas/Admin/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/tursl/OneDrive/Desktop/CODEACADEMY/HomeWorks/HomeWork2311/TestApp/Web/Areas/Admin/Views/Category/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tursl/OneDrive/Desktop/CODEACADEMY/HomeWorks/HomeWork2311/TestApp/Web/Areas/Admin/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tursl/OneDrive/Desktop/CODEACADEMY/HomeWorks/HomeWork2311/TestApp/Web/Areas/Admin/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/tursl/OneDrive/Desktop/CODEACADEMY/HomeWorks/HomeWork2311/TestApp/Web/Views/Account/Login.cshtml]
@@ -37,6 +49,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/tursl/OneDrive/Desktop/CODEACADEMY/HomeWorks/HomeWork2311/TestApp/Web/Views/Category/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tursl/OneDrive/Desktop/CODEACADEMY/HomeWorks/HomeWork2311/TestApp/Web/Views/Expert/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwZXJ0XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tursl/OneDrive/Desktop/CODEACADEMY/HomeWorks/HomeWork2311/TestApp/Web/Views/Expert/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwZXJ0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tursl/OneDrive/Desktop/CODEACADEMY/HomeWorks/HomeWork2311/TestApp/Web/Views/Expert/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwZXJ0XFVwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/tursl/OneDrive/Desktop/CODEACADEMY/HomeWorks/HomeWork2311/TestApp/Web/Views/Product/Create.cshtml]
@@ -66,6 +90,10 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/Users/tursl/OneDrive/Desktop/CODEACADEMY/HomeWorks/HomeWork2311/TestApp/Web/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tursl/OneDrive/Desktop/CODEACADEMY/HomeWorks/HomeWork2311/TestApp/Web/Areas/Admin/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-wz311d1xvb
 
 [C:/Users/tursl/OneDrive/Desktop/CODEACADEMY/HomeWorks/HomeWork2311/TestApp/Web/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s

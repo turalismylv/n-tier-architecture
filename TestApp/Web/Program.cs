@@ -38,6 +38,7 @@ builder.Services.AddIdentity<User, IdentityRole>(options =>
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IProductPhotoRepository, ProductPhotoRepository>();
+builder.Services.AddScoped<IExpertRepository, ExpertRepository> ();
 #endregion
 
 #region Services
@@ -46,6 +47,8 @@ builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<AdminAbstractService.ICategoryService, AdminConcreteService.CategoryService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IAccountService, AccountService>();
+builder.Services.AddScoped<IExpertService, ExpertService>();
+builder.Services.AddScoped<AdminAbstractService.IAccountService, AdminConcreteService.AccountService>();
 
 
 
@@ -76,7 +79,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "areas",
-    pattern: "{area:exists}/{controller=category}/{action=index}/{id?}"
+    pattern: "{area:exists}/{controller=account}/{action=login}/{id?}"
     );
 
 app.MapControllerRoute(

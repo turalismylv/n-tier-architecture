@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9C+Z0zMh3E4ZygXmyRFaw3V2yiEgY9aEsUMH/SAvNDs=",
+  "Hash": "EDJA9CEJRCdp1W3tmIS0MUU8cu2Xt4IMhYwIOiqyE/c=",
   "Source": "Web",
   "BasePath": "_content/Web",
   "Mode": "Default",
@@ -49,6 +49,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\tursl\\OneDrive\\Desktop\\CODEACADEMY\\HomeWorks\\HomeWork2311\\TestApp\\Web\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Web.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\tursl\\OneDrive\\Desktop\\CODEACADEMY\\HomeWorks\\HomeWork2311\\TestApp\\Web\\wwwroot\\assets\\img\\987eadab-951f-435d-987a-b3704958ded9_Emil 1.jpg",
+      "SourceId": "Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\tursl\\OneDrive\\Desktop\\CODEACADEMY\\HomeWorks\\HomeWork2311\\TestApp\\Web\\wwwroot\\",
+      "BasePath": "_content/Web",
+      "RelativePath": "assets/img/987eadab-951f-435d-987a-b3704958ded9_Emil 1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\987eadab-951f-435d-987a-b3704958ded9_Emil 1.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\tursl\\OneDrive\\Desktop\\CODEACADEMY\\HomeWorks\\HomeWork2311\\TestApp\\Web\\wwwroot\\assets\\img\\af6b4e62-301c-40cd-80ae-68b06b20d860_turaldi.png",
+      "SourceId": "Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\tursl\\OneDrive\\Desktop\\CODEACADEMY\\HomeWorks\\HomeWork2311\\TestApp\\Web\\wwwroot\\",
+      "BasePath": "_content/Web",
+      "RelativePath": "assets/img/af6b4e62-301c-40cd-80ae-68b06b20d860_turaldi.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\af6b4e62-301c-40cd-80ae-68b06b20d860_turaldi.png"
     },
     {
       "Identity": "C:\\Users\\tursl\\OneDrive\\Desktop\\CODEACADEMY\\HomeWorks\\HomeWork2311\\TestApp\\Web\\wwwroot\\assets\\img\\b198c225-a8d6-4355-a83c-0f8e91ff9102_Emil 1.jpg",
